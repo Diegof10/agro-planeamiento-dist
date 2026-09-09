@@ -437,6 +437,11 @@ function isRedirect(obj) {
 function isResolvedRedirect(obj) {
 	return isRedirect(obj) && !!obj.options.href;
 }
+/** Parse a serialized redirect object back into a redirect Response. */
+/** Parse a serialized redirect object back into a redirect Response. */
+function parseRedirect(obj) {
+	if (obj !== null && typeof obj === "object" && obj.isSerializedRedirect) return redirect(obj);
+}
 //#endregion
 //#region node_modules/@tanstack/router-core/dist/esm/ssr/ssr-match-id.js
 function dehydrateSsrMatchId(id) {
@@ -15163,4 +15168,4 @@ var renderRouterToStream = async ({ request, router, responseHeaders, children }
 	throw new Error("No renderToReadableStream or renderToPipeableStream found in react-dom/server. Ensure you are using a version of react-dom that supports streaming.");
 };
 //#endregion
-export { resolveManifestAssetLink as A, rootRouteId as B, require_jsx_runtime as C, createInlineCssStyleAsset as D, createInlineCssPlaceholderAsset as E, createLRUCache as F, require_react as H, decodePath as I, dehydrateSsrMatchId as L, _getRenderedMatches as M, executeRewriteInput as N, getScriptPreloadAttrs as O, invariant as P, isRedirect as R, useRouter as S, TSR_SCRIPT_BARRIER_ID as T, isNotFound as V, createFileRoute as _, isSsrResponse as a, Navigate as b, stripSsrResponseBody as c, HeadContent as d, useRouterState as f, lazyRouteComponent as g, Outlet as h, disposeSsrResponseDetached as i, resolveManifestCssLink as j, getStylesheetHref as k, require_react_dom as l, createRouter as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, RouterProvider as p, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, Scripts as u, createRootRoute as v, GLOBAL_TSR as w, useNavigate as x, Link as y, isResolvedRedirect as z };
+export { resolveManifestAssetLink as A, parseRedirect as B, require_jsx_runtime as C, createInlineCssStyleAsset as D, createInlineCssPlaceholderAsset as E, createLRUCache as F, isNotFound as H, decodePath as I, dehydrateSsrMatchId as L, _getRenderedMatches as M, executeRewriteInput as N, getScriptPreloadAttrs as O, invariant as P, isRedirect as R, useRouter as S, TSR_SCRIPT_BARRIER_ID as T, require_react as U, rootRouteId as V, createFileRoute as _, isSsrResponse as a, Navigate as b, stripSsrResponseBody as c, HeadContent as d, useRouterState as f, lazyRouteComponent as g, Outlet as h, disposeSsrResponseDetached as i, resolveManifestCssLink as j, getStylesheetHref as k, require_react_dom as l, createRouter as m, bindSsrResponseToRequest as n, normalizeSsrResponse as o, RouterProvider as p, defineHandlerCallback as r, replaceSsrResponse as s, renderRouterToStream as t, Scripts as u, createRootRoute as v, GLOBAL_TSR as w, useNavigate as x, Link as y, isResolvedRedirect as z };
