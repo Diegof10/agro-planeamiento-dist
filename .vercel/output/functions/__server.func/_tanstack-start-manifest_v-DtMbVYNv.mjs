@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-D3wxLA_f.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DtMbVYNv.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/workspace/src/routes/__root.tsx",
@@ -22,16 +22,16 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/auth/$"
 		],
 		preloads: [
-			"/assets/index-bDffFJ2-.js",
+			"/assets/index-gFzUEMcC.js",
 			"/assets/react-SIfiwpqq.js",
-			"/assets/createClientRpc-9F3LjgIV.js",
+			"/assets/useRouterState-vSBdgeep.js",
 			"/assets/theme-BwlJDZ9b.js",
 			"/assets/preload-helper-CRUv0H3q.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-bDffFJ2-.js"
+			src: "/assets/index-gFzUEMcC.js"
 		} }]
 	},
 	"/": {
@@ -51,8 +51,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/cartera.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/cartera-DAwtnamz.js",
-			"/assets/require-auth-CqL7DigW.js",
+			"/assets/cartera-Bez0zeos.js",
+			"/assets/require-auth-COY3sMEp.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/refresh-cw-dRA0fZSA.js",
 			"/assets/trash-2-BCbW73OB.js",
@@ -68,22 +68,22 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/clientes.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/clientes-DCkByyTX.js",
-			"/assets/require-auth-CqL7DigW.js",
+			"/assets/clientes-Be7pu0FU.js",
+			"/assets/require-auth-COY3sMEp.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/plus-DO3Ol8BY.js",
 			"/assets/page-D7YJCzQx.js",
 			"/assets/button-BGLboMmU.js",
 			"/assets/format-Bp6l7bP7.js",
-			"/assets/estudio-gyJrX3cL.js",
-			"/assets/campaign-store-CUZ1zCRQ.js"
+			"/assets/estudio-DBS7cWie.js",
+			"/assets/campaign-store-BhdxRisQ.js"
 		]
 	},
 	"/granos": {
 		filePath: "/workspace/src/routes/granos.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/granos-B5Z1pIhe.js",
+			"/assets/granos-C55grSCH.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/refresh-cw-dRA0fZSA.js",
 			"/assets/x-VioPvyDO.js",
@@ -97,20 +97,20 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/informe.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/informe-CbO2DOod.js",
-			"/assets/require-auth-CqL7DigW.js",
+			"/assets/informe-Ctdv_ZRn.js",
+			"/assets/require-auth-COY3sMEp.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/button-BGLboMmU.js",
 			"/assets/format-Bp6l7bP7.js",
-			"/assets/estudio-gyJrX3cL.js",
-			"/assets/campaign-store-CUZ1zCRQ.js"
+			"/assets/estudio-DBS7cWie.js",
+			"/assets/campaign-store-BhdxRisQ.js"
 		]
 	},
 	"/login": {
 		filePath: "/workspace/src/routes/login.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/login-ChWB5fKi.js",
+			"/assets/login-ffSShQEL.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/client-C85fcJ4s.js",
 			"/assets/button-BGLboMmU.js"
@@ -120,8 +120,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/mantenimiento.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/mantenimiento-C52hDGIk.js",
-			"/assets/require-auth-CqL7DigW.js",
+			"/assets/mantenimiento-DJloH-Nv.js",
+			"/assets/require-auth-COY3sMEp.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/plus-DO3Ol8BY.js",
 			"/assets/refresh-cw-dRA0fZSA.js",
@@ -129,7 +129,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/assets/page-D7YJCzQx.js",
 			"/assets/button-BGLboMmU.js",
 			"/assets/format-Bp6l7bP7.js",
-			"/assets/estudio-gyJrX3cL.js",
+			"/assets/estudio-DBS7cWie.js",
 			"/assets/fuentes-CDavZodM.js"
 		]
 	},
@@ -137,13 +137,13 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/margenes.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/margenes-C4rU-E6K.js",
-			"/assets/require-auth-CqL7DigW.js",
+			"/assets/margenes-DHziqtFF.js",
+			"/assets/require-auth-COY3sMEp.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/PieChart-B9Wyinqd.js",
 			"/assets/page-D7YJCzQx.js",
 			"/assets/format-Bp6l7bP7.js",
-			"/assets/estudio-gyJrX3cL.js"
+			"/assets/estudio-DBS7cWie.js"
 		]
 	}
 } });

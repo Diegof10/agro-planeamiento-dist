@@ -1,15 +1,15 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { f as FileSpreadsheet, o as Search, r as Trash2, s as RefreshCw, t as X } from "../_libs/lucide-react.mjs";
-import { a as ratioLabel, i as isKnownCedear, n as cedearRatio, r as cedearToUsd } from "./router-BBCS8va8.mjs";
-import { r as cn } from "./site-nav-BwHWiFbH.mjs";
-import { n as queuePersist, t as RequireAuth } from "./require-auth-PJQJki3G.mjs";
-import { a as PageMain, i as PageHeader, n as DeskGrid, o as ScrollPane, r as Page$1, t as ChipRow } from "./page-ev-L8eca.mjs";
-import { t as Button } from "./button-C5TS97E8.mjs";
+import { a as ratioLabel, i as isKnownCedear, n as cedearRatio, r as cedearToUsd } from "./router-BT0eHCR5.mjs";
+import { r as cn } from "./site-nav-Co5vIArY.mjs";
+import { n as queuePersist, t as RequireAuth } from "./require-auth-BWV1j3hT.mjs";
+import { a as PageMain, i as PageHeader, n as DeskGrid, o as ScrollPane, r as Page$1, t as ChipRow } from "./page-CoA-y-pq.mjs";
+import { t as Button } from "./button-DfYDIE6_.mjs";
 import { n as DISCLAIMER_MERCADO, r as FIRM } from "./brand-CbU4ly2d.mjs";
 import { a as pct, c as usd, i as num, s as signedClass, t as ars } from "./format-BTGgZiZN.mjs";
 import { a as Line, c as Cell, i as XAxis, l as ResponsiveContainer, n as LineChart, o as CartesianGrid, r as YAxis, s as Pie, t as PieChart, u as Tooltip } from "../_libs/recharts+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/cartera-C5jOK7nt.js
+//#region node_modules/.nitro/vite/services/ssr/assets/cartera-CT6YdEIF.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var SEED_DATE = "2026-01-15";

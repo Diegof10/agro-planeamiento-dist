@@ -1,10 +1,11 @@
 import { o as __toESM } from "../_runtime.mjs";
-import { C as require_jsx_runtime, S as useRouter, U as require_react, _ as createFileRoute, d as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, u as Scripts, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
+import { C as require_jsx_runtime, S as useRouter, U as require_react, _ as createFileRoute, d as HeadContent, f as useRouterState, g as lazyRouteComponent, h as Outlet, m as createRouter, u as Scripts, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as __exportAll } from "./ssr.mjs";
 import { L as string, N as number, P as object, R as union, j as literal } from "../_libs/@better-auth/core+[...].mjs";
 import { n as auth } from "./server-_G1yBXj8.mjs";
 import { n as TriangleAlert } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BBCS8va8.js
+import { t as Analytics } from "../_libs/vercel__analytics.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BT0eHCR5.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -329,7 +330,11 @@ var Route$17 = createRootRoute({
 			}
 		]
 	}),
-	component: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
+	component: RootDocument
+});
+function RootDocument() {
+	const pathname = useRouterState({ select: (s) => s.location.pathname });
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "es",
 		suppressHydrationWarning: true,
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", { dangerouslySetInnerHTML: { __html: THEME_BOOT } }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", {
@@ -337,22 +342,27 @@ var Route$17 = createRootRoute({
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PreviewHostBridge, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(AuthProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}) }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Analytics, {
+					debug: false,
+					route: pathname,
+					path: pathname
+				})
 			]
 		})]
-	})
-});
-var $$splitComponentImporter$7 = () => import("./routes-CJXH9T7L.mjs");
+	});
+}
+var $$splitComponentImporter$7 = () => import("./routes-DXsUGikt.mjs");
 var Route$16 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$7, "component") });
-var $$splitComponentImporter$6 = () => import("./cartera-C5jOK7nt.mjs");
+var $$splitComponentImporter$6 = () => import("./cartera-CT6YdEIF.mjs");
 var Route$15 = createFileRoute("/cartera")({ component: lazyRouteComponent($$splitComponentImporter$6, "component") });
-var $$splitComponentImporter$5 = () => import("./clientes-CaGJVrcD.mjs");
+var $$splitComponentImporter$5 = () => import("./clientes-25ntzLqC.mjs");
 var Route$14 = createFileRoute("/clientes")({ component: lazyRouteComponent($$splitComponentImporter$5, "component") });
-var $$splitComponentImporter$4 = () => import("./granos-B6_1i9_9.mjs");
+var $$splitComponentImporter$4 = () => import("./granos-C6fyVwVi.mjs");
 var Route$13 = createFileRoute("/granos")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
-var $$splitComponentImporter$3 = () => import("./informe-B3DdTEEL.mjs");
+var $$splitComponentImporter$3 = () => import("./informe-BkLMD2XL.mjs");
 var Route$12 = createFileRoute("/informe")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./login-DGGOsl95.mjs");
+var $$splitComponentImporter$2 = () => import("./login-C2NdPBQf.mjs");
 var Route$11 = createFileRoute("/login")({
 	validateSearch: (s) => {
 		const next = typeof s.next === "string" ? s.next : void 0;
@@ -361,9 +371,9 @@ var Route$11 = createFileRoute("/login")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./mantenimiento-DXymo4iD.mjs");
+var $$splitComponentImporter$1 = () => import("./mantenimiento-Dnb4aioX.mjs");
 var Route$10 = createFileRoute("/mantenimiento")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./margenes-D-5UpO82.mjs");
+var $$splitComponentImporter = () => import("./margenes-DwnVQTVu.mjs");
 var Route$9 = createFileRoute("/margenes")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var UA = "Mozilla/5.0 (compatible; AgroPlaneamiento/1.0; +https://agroplaneamiento.com)";
 async function fetchText(url, ms = 8e3) {
