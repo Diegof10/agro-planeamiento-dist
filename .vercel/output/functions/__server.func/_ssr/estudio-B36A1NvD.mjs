@@ -1,5 +1,5 @@
-import { n as queuePersist } from "./require-auth-BWV1j3hT.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/estudio-78u6XmuT.js
+import { n as queuePersist } from "./require-auth-BMH_D_o-.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/estudio-B36A1NvD.js
 var bridge = null;
 function setCatalogBridge(next) {
 	bridge = next;
@@ -248,13 +248,16 @@ function doseLabel(e) {
 	if (r.kind === "pctIncome") return `${r.dose.toFixed(1)} % ingreso`;
 	return `${r.dose} ${r.unitLabel}`;
 }
+function roundUsdQq(n) {
+	return Math.round(n * 100) / 100;
+}
 function pizarraQqFromLocal(local) {
 	const r = local?.find((x) => /rosario/i.test(x.plaza)) ?? local?.[0];
 	if (!r) return null;
 	const out = {};
-	if (r.soja && r.soja > 0) out.soja = r.soja / 10;
-	if (r.maiz && r.maiz > 0) out.maiz = r.maiz / 10;
-	if (r.trigo && r.trigo > 0) out.trigo = r.trigo / 10;
+	if (r.soja && r.soja > 0) out.soja = roundUsdQq(r.soja / 10);
+	if (r.maiz && r.maiz > 0) out.maiz = roundUsdQq(r.maiz / 10);
+	if (r.trigo && r.trigo > 0) out.trigo = roundUsdQq(r.trigo / 10);
 	return Object.keys(out).length ? out : null;
 }
 function normalizeLine(e) {
@@ -699,4 +702,4 @@ function ensureEstudioBridge() {
 	});
 }
 //#endregion
-export { onCatalogChange as A, seedCliente as B, loadCatalog as C, loadOpenEscenario as D, loadOpen as E, resetCatalog as F, touchEstudioAt as H, saveCatalog as I, saveClientes as L, patchEscenario as M, patchOpenCrop as N, makeLine as O, pizarraQqFromLocal as P, saveEscenarios as R, lineUsdHa as S, loadEscenarios as T, seedEscenario as V, ensureEstudioBridge as _, FX_BNA_FALLBACK as a, haEscenario as b, RINDE_DEFAULT as c, alquilerUsdHa as d, calcularMargen as f, emptyEscenario as g, emptyCliente as h, ESTUDIO_EVENT as i, parseFleteLargo as j, normalizeLine as k, RULES as l, duplicateEscenario as m, CROP_LABEL as n, GROUPS as o, doseLabel as p, DEFAULT_CATALOG as r, PRECIO_FALLBACK_QQ as s, CROPS as t, UNITS as u, fleteCortoArsT as v, loadClientes as w, labelTipoPersona as x, freezeEscenariosDeCliente as y, saveOpen as z };
+export { onCatalogChange as A, saveOpen as B, loadCatalog as C, loadOpenEscenario as D, loadOpen as E, resetCatalog as F, seedEscenario as H, roundUsdQq as I, saveCatalog as L, patchEscenario as M, patchOpenCrop as N, makeLine as O, pizarraQqFromLocal as P, saveClientes as R, lineUsdHa as S, loadEscenarios as T, touchEstudioAt as U, seedCliente as V, ensureEstudioBridge as _, FX_BNA_FALLBACK as a, haEscenario as b, RINDE_DEFAULT as c, alquilerUsdHa as d, calcularMargen as f, emptyEscenario as g, emptyCliente as h, ESTUDIO_EVENT as i, parseFleteLargo as j, normalizeLine as k, RULES as l, duplicateEscenario as m, CROP_LABEL as n, GROUPS as o, doseLabel as p, DEFAULT_CATALOG as r, PRECIO_FALLBACK_QQ as s, CROPS as t, UNITS as u, fleteCortoArsT as v, loadClientes as w, labelTipoPersona as x, freezeEscenariosDeCliente as y, saveEscenarios as z };

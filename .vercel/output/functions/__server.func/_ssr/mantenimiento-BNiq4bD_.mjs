@@ -1,14 +1,14 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as Plus, r as Trash2, s as RefreshCw } from "../_libs/lucide-react.mjs";
-import { r as cn } from "./site-nav-Co5vIArY.mjs";
-import { t as RequireAuth } from "./require-auth-BWV1j3hT.mjs";
-import { a as PageMain, i as PageHeader, r as Page$1 } from "./page-CoA-y-pq.mjs";
-import { t as Button } from "./button-DfYDIE6_.mjs";
+import { r as cn } from "./site-nav-AKpnAPBZ.mjs";
+import { t as RequireAuth } from "./require-auth-BMH_D_o-.mjs";
+import { a as PageMain, i as PageHeader, r as Page$1 } from "./page-BU_NP2BG.mjs";
+import { t as Button } from "./button-DaNrgsa4.mjs";
 import { i as num } from "./format-BTGgZiZN.mjs";
-import { C as loadCatalog, F as resetCatalog, I as saveCatalog, O as makeLine, _ as ensureEstudioBridge, k as normalizeLine, o as GROUPS, p as doseLabel, r as DEFAULT_CATALOG, t as CROPS, u as UNITS } from "./estudio-78u6XmuT.mjs";
-import { t as FuentesCard } from "./fuentes-G3hs-CcR.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/mantenimiento-Dnb4aioX.js
+import { C as loadCatalog, F as resetCatalog, L as saveCatalog, O as makeLine, _ as ensureEstudioBridge, k as normalizeLine, o as GROUPS, p as doseLabel, r as DEFAULT_CATALOG, t as CROPS, u as UNITS } from "./estudio-B36A1NvD.mjs";
+import { t as FuentesCard } from "./fuentes-lxO58iHw.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/mantenimiento-BNiq4bD_.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var INP = "h-11 w-full rounded-md bg-paper-2 px-3 text-sm tabular hair";

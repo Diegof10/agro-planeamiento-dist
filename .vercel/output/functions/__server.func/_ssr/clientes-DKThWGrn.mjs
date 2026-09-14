@@ -1,14 +1,14 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, x as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as Plus, m as Copy, u as Minus } from "../_libs/lucide-react.mjs";
-import { r as cn } from "./site-nav-Co5vIArY.mjs";
-import { t as RequireAuth } from "./require-auth-BWV1j3hT.mjs";
-import { a as PageMain, i as PageHeader, r as Page$1, t as ChipRow } from "./page-CoA-y-pq.mjs";
-import { t as Button } from "./button-DfYDIE6_.mjs";
+import { r as cn } from "./site-nav-AKpnAPBZ.mjs";
+import { t as RequireAuth } from "./require-auth-BMH_D_o-.mjs";
+import { a as PageMain, i as PageHeader, r as Page$1, t as ChipRow } from "./page-BU_NP2BG.mjs";
+import { t as Button } from "./button-DaNrgsa4.mjs";
 import { c as usd, i as num } from "./format-BTGgZiZN.mjs";
-import { B as seedCliente, E as loadOpen, H as touchEstudioAt, L as saveClientes, P as pizarraQqFromLocal, R as saveEscenarios, S as lineUsdHa, T as loadEscenarios, V as seedEscenario, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, b as haEscenario, d as alquilerUsdHa, g as emptyEscenario, h as emptyCliente, j as parseFleteLargo, l as RULES, m as duplicateEscenario, n as CROP_LABEL, o as GROUPS, t as CROPS, v as fleteCortoArsT, w as loadClientes, y as freezeEscenariosDeCliente, z as saveOpen } from "./estudio-78u6XmuT.mjs";
-import { c as mesesCampana, d as saveInformeSource, f as waterfallDiff, i as fmtFecha, l as planFinanciero, r as fechaVtoCanje, t as SIEMBRA_FECHA_DEFAULT, u as saveCampaignInput } from "./campaign-store-DA51acbA.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/clientes-25ntzLqC.js
+import { B as saveOpen, E as loadOpen, H as seedEscenario, I as roundUsdQq, P as pizarraQqFromLocal, R as saveClientes, S as lineUsdHa, T as loadEscenarios, U as touchEstudioAt, V as seedCliente, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, b as haEscenario, d as alquilerUsdHa, g as emptyEscenario, h as emptyCliente, j as parseFleteLargo, l as RULES, m as duplicateEscenario, n as CROP_LABEL, o as GROUPS, t as CROPS, v as fleteCortoArsT, w as loadClientes, y as freezeEscenariosDeCliente, z as saveEscenarios } from "./estudio-B36A1NvD.mjs";
+import { c as mesesCampana, d as saveInformeSource, f as waterfallDiff, i as fmtFecha, l as planFinanciero, r as fechaVtoCanje, t as SIEMBRA_FECHA_DEFAULT, u as saveCampaignInput } from "./campaign-store-DBS-z2DE.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/clientes-DKThWGrn.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var INP = "h-11 w-full rounded-md bg-paper-2 px-3 text-sm tabular hair";
@@ -297,16 +297,19 @@ function Field({ label, children }) {
 		}), children]
 	});
 }
-function Num({ value, onChange, label }) {
+function Num({ value, onChange, label, step = "any", digits }) {
+	const shown = Number.isFinite(value) ? digits != null ? roundUsdQq(value).toFixed(digits) : value : "";
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 		type: "number",
 		inputMode: "decimal",
+		step,
 		className: INP,
 		"aria-label": label,
-		value: Number.isFinite(value) ? value : "",
+		value: shown,
 		onChange: (e) => {
 			const n = Number(e.target.value);
-			if (Number.isFinite(n)) onChange(n);
+			if (!Number.isFinite(n)) return;
+			onChange(digits != null ? roundUsdQq(n) : n);
 		}
 	});
 }
@@ -406,7 +409,7 @@ function ClientesDesk() {
 							if (q && !crops[k].precioManual && Math.abs(crops[k].precioQq - q) >= .005) {
 								crops[k] = {
 									...crops[k],
-									precioQq: q
+									precioQq: roundUsdQq(q)
 								};
 								dirty = true;
 							}
@@ -762,32 +765,32 @@ function ClientesDesk() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 						className: "mt-4 overflow-x-auto",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("table", {
-							className: "w-full min-w-[560px] text-sm",
+							className: "w-full min-w-[560px] table-fixed text-sm",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
-								className: "border-y border-line text-left text-[11px] font-medium tracking-wide text-ink-soft uppercase",
+								className: "border-y border-line text-[11px] font-medium tracking-wide text-ink-soft uppercase",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 pr-3",
+										className: "w-[22%] py-2 pr-3 text-left font-medium",
 										children: "Cultivo"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 pr-3 text-right",
+										className: "px-3 py-2 text-left font-medium",
 										children: "Ha"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 pr-3 text-right",
+										className: "px-3 py-2 text-left font-medium",
 										children: "Rinde"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 pr-3 text-right",
+										className: "px-3 py-2 text-left font-medium",
 										children: "USD/qq"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 pr-3 text-right",
+										className: "px-3 py-2 text-left font-medium",
 										children: "Km"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("th", {
-										className: "py-2 text-right",
+										className: "px-3 py-2 text-left font-medium",
 										children: "Alq. qq"
 									})
 								]
@@ -808,8 +811,9 @@ function ClientesDesk() {
 											})
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
-											className: "py-2 pr-3",
+											className: "py-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Num, {
+												label: `Hectáreas ${c.label}`,
 												value: row.ha,
 												onChange: (n) => patchCrop(c.id, {
 													ha: n,
@@ -818,16 +822,20 @@ function ClientesDesk() {
 											})
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
-											className: "py-2 pr-3",
+											className: "py-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Num, {
+												label: `Rinde ${c.label}`,
 												value: row.rinde,
 												onChange: (n) => patchCrop(c.id, { rinde: n })
 											})
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
-											className: "py-2 pr-3",
+											className: "py-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Num, {
+												label: `USD/qq ${c.label}`,
 												value: row.precioQq,
+												step: "0.01",
+												digits: 2,
 												onChange: (n) => patchCrop(c.id, {
 													precioQq: n,
 													precioManual: true
@@ -835,8 +843,9 @@ function ClientesDesk() {
 											})
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
-											className: "py-2 pr-3",
+											className: "py-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Num, {
+												label: `Km ${c.label}`,
 												value: row.km,
 												onChange: (n) => patchCrop(c.id, { km: n })
 											})
@@ -844,6 +853,7 @@ function ClientesDesk() {
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("td", {
 											className: "py-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Num, {
+												label: `Alquiler qq ${c.label}`,
 												value: row.alquilerQq,
 												onChange: (n) => patchCrop(c.id, { alquilerQq: n })
 											})
