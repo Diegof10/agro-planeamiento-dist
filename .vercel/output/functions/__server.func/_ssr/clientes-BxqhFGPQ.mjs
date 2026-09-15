@@ -1,14 +1,14 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, x as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as Plus, m as Copy, u as Minus } from "../_libs/lucide-react.mjs";
-import { r as cn } from "./site-nav-AKpnAPBZ.mjs";
-import { t as RequireAuth } from "./require-auth-BMH_D_o-.mjs";
-import { a as PageMain, i as PageHeader, r as Page$1, t as ChipRow } from "./page-BU_NP2BG.mjs";
-import { t as Button } from "./button-DaNrgsa4.mjs";
+import { r as cn } from "./site-nav-BQjdxVH2.mjs";
+import { t as RequireAuth } from "./require-auth-DXF52AGr.mjs";
+import { a as PageMain, i as PageHeader, r as Page$1, t as ChipRow } from "./page-C_mfpDjx.mjs";
+import { t as Button } from "./button-BSBEnbg8.mjs";
 import { c as usd, i as num } from "./format-BTGgZiZN.mjs";
-import { B as saveOpen, E as loadOpen, H as seedEscenario, I as roundUsdQq, P as pizarraQqFromLocal, R as saveClientes, S as lineUsdHa, T as loadEscenarios, U as touchEstudioAt, V as seedCliente, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, b as haEscenario, d as alquilerUsdHa, g as emptyEscenario, h as emptyCliente, j as parseFleteLargo, l as RULES, m as duplicateEscenario, n as CROP_LABEL, o as GROUPS, t as CROPS, v as fleteCortoArsT, w as loadClientes, y as freezeEscenariosDeCliente, z as saveEscenarios } from "./estudio-B36A1NvD.mjs";
-import { c as mesesCampana, d as saveInformeSource, f as waterfallDiff, i as fmtFecha, l as planFinanciero, r as fechaVtoCanje, t as SIEMBRA_FECHA_DEFAULT, u as saveCampaignInput } from "./campaign-store-DBS-z2DE.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/clientes-DKThWGrn.js
+import { B as saveOpen, E as loadOpen, H as seedEscenario, I as roundUsdQq, P as pizarraQqFromLocal, R as saveClientes, S as lineUsdHa, T as loadEscenarios, U as touchEstudioAt, V as seedCliente, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, b as haEscenario, d as alquilerUsdHa, g as emptyEscenario, h as emptyCliente, j as parseFleteLargo, l as RULES, m as duplicateEscenario, n as CROP_LABEL, o as GROUPS, t as CROPS, v as fleteCortoArsT, w as loadClientes, y as freezeEscenariosDeCliente, z as saveEscenarios } from "./estudio-5MfS_QS9.mjs";
+import { c as mesesCampana, d as saveInformeSource, f as waterfallDiff, i as fmtFecha, l as planFinanciero, r as fechaVtoCanje, t as SIEMBRA_FECHA_DEFAULT, u as saveCampaignInput } from "./campaign-store-B42VcA56.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/clientes-BxqhFGPQ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var INP = "h-11 w-full rounded-md bg-paper-2 px-3 text-sm tabular hair";

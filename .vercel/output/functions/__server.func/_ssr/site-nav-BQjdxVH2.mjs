@@ -2,9 +2,9 @@ import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as hasGateSessionMarker } from "./server-_G1yBXj8.mjs";
 import { i as Sun, l as Moon } from "../_libs/lucide-react.mjs";
-import { c as setTheme, s as getTheme } from "./router-DIhOYZrB.mjs";
+import { c as setTheme, s as getTheme } from "./router-doTuhIHg.mjs";
 import { i as signOut, t as authClient } from "./client-B40BzJxt.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/site-nav-AKpnAPBZ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/site-nav-BQjdxVH2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function cn(...parts) {

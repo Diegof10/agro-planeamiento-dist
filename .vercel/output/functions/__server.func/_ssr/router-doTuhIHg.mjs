@@ -5,7 +5,7 @@ import { L as string, N as number, P as object, R as union, j as literal } from 
 import { n as auth } from "./server-_G1yBXj8.mjs";
 import { n as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { t as Analytics } from "../_libs/vercel__analytics.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DIhOYZrB.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-doTuhIHg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -352,17 +352,17 @@ function RootDocument() {
 		})]
 	});
 }
-var $$splitComponentImporter$7 = () => import("./routes-Dix-Bdcq.mjs");
+var $$splitComponentImporter$7 = () => import("./routes-DH9D3Qd3.mjs");
 var Route$16 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$7, "component") });
-var $$splitComponentImporter$6 = () => import("./cartera-BR0t_PFL.mjs");
+var $$splitComponentImporter$6 = () => import("./cartera-CwAK3FQH.mjs");
 var Route$15 = createFileRoute("/cartera")({ component: lazyRouteComponent($$splitComponentImporter$6, "component") });
-var $$splitComponentImporter$5 = () => import("./clientes-DKThWGrn.mjs");
+var $$splitComponentImporter$5 = () => import("./clientes-BxqhFGPQ.mjs");
 var Route$14 = createFileRoute("/clientes")({ component: lazyRouteComponent($$splitComponentImporter$5, "component") });
-var $$splitComponentImporter$4 = () => import("./granos-BAKyGGs3.mjs");
+var $$splitComponentImporter$4 = () => import("./granos-D_sZPUvF.mjs");
 var Route$13 = createFileRoute("/granos")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
-var $$splitComponentImporter$3 = () => import("./informe-ru_EJ084.mjs");
+var $$splitComponentImporter$3 = () => import("./informe-BJuCxfWE.mjs");
 var Route$12 = createFileRoute("/informe")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./login-DyCN4g2f.mjs");
+var $$splitComponentImporter$2 = () => import("./login-BFzGxBN1.mjs");
 var Route$11 = createFileRoute("/login")({
 	validateSearch: (s) => {
 		const next = typeof s.next === "string" ? s.next : void 0;
@@ -371,9 +371,9 @@ var Route$11 = createFileRoute("/login")({
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./mantenimiento-BNiq4bD_.mjs");
+var $$splitComponentImporter$1 = () => import("./mantenimiento-B940c4X0.mjs");
 var Route$10 = createFileRoute("/mantenimiento")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./margenes-9Ishv0HY.mjs");
+var $$splitComponentImporter = () => import("./margenes-2t9noqta.mjs");
 var Route$9 = createFileRoute("/margenes")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var UA = "Mozilla/5.0 (compatible; AgroPlaneamiento/1.0; +https://agroplaneamiento.com)";
 async function fetchText(url, ms = 8e3) {
@@ -641,6 +641,426 @@ function bnaBilleteVenta(html) {
 	const m = html.match(/Dolar U\.S\.A<\/td>\s*<td[^>]*>\s*([\d.,]+)\s*<\/td>\s*<td[^>]*>\s*([\d.,]+)\s*<\/td>/i);
 	return m ? parseBnaArs(m[2]) : null;
 }
+var ESMIS_LISTING = "https://esmis.nal.usda.gov/publication/world-agricultural-supply-and-demand-estimates";
+var CALENDAR_URL = "https://www.usda.gov/about-usda/general-information/staff-offices/office-chief-economist/commodity-markets/wasde-report";
+var ESMIS_ORIGIN = "https://esmis.nal.usda.gov";
+var OCE_BASE = "https://www.usda.gov/oce/commodity/wasde";
+var MON3 = "Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec";
+var EN_MONTH = {
+	jan: 1,
+	january: 1,
+	feb: 2,
+	february: 2,
+	mar: 3,
+	march: 3,
+	apr: 4,
+	april: 4,
+	may: 5,
+	jun: 6,
+	june: 6,
+	jul: 7,
+	july: 7,
+	aug: 8,
+	august: 8,
+	sep: 9,
+	september: 9,
+	oct: 10,
+	october: 10,
+	nov: 11,
+	november: 11,
+	dec: 12,
+	december: 12
+};
+var ES_MONTH = [
+	"",
+	"enero",
+	"febrero",
+	"marzo",
+	"abril",
+	"mayo",
+	"junio",
+	"julio",
+	"agosto",
+	"septiembre",
+	"octubre",
+	"noviembre",
+	"diciembre"
+];
+/** Calendario 2026 (12:00 ET) si USDA no responde. */
+var WASDE_CALENDAR_2026 = [
+	"2026-01-12",
+	"2026-02-10",
+	"2026-03-10",
+	"2026-04-09",
+	"2026-05-12",
+	"2026-06-11",
+	"2026-07-10",
+	"2026-08-12",
+	"2026-09-11",
+	"2026-10-09",
+	"2026-11-10",
+	"2026-12-10"
+];
+var CACHE_TTL_MS = 108e5;
+var RELEASE_TTL_MS = 6e5;
+var cache$1 = null;
+function nyDate(ms) {
+	return new Intl.DateTimeFormat("en-CA", {
+		timeZone: "America/New_York",
+		year: "numeric",
+		month: "2-digit",
+		day: "2-digit"
+	}).format(new Date(ms));
+}
+function nyHour(ms) {
+	const h = new Intl.DateTimeFormat("en-US", {
+		timeZone: "America/New_York",
+		hour: "numeric",
+		hourCycle: "h23"
+	}).format(new Date(ms));
+	return Number(h);
+}
+function isWasdeReleaseDay(dates, now = Date.now()) {
+	return dates.includes(nyDate(now));
+}
+function wasdeCodeFromIso(isoDate) {
+	const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(isoDate);
+	if (!m) return "";
+	return `wasde${m[2]}${m[1].slice(2)}`;
+}
+function oceTxt(code) {
+	return `${OCE_BASE}/${code.replace(/v\d+$/i, "")}.txt`;
+}
+function ocePdf(code) {
+	return `${OCE_BASE}/${code.replace(/v\d+$/i, "")}.pdf`;
+}
+function absUrl(href) {
+	if (/^https?:\/\//i.test(href)) return href;
+	return `${ESMIS_ORIGIN}${href.startsWith("/") ? "" : "/"}${href}`;
+}
+function parseWasdeCalendar(html) {
+	const text = html.replace(/<[^>]+>/g, " ").replace(/&nbsp;/gi, " ").replace(/\s+/g, " ");
+	const out = [];
+	const seen = /* @__PURE__ */ new Set();
+	const yearRe = /In (\d{4}) the WASDE report will be released on/gi;
+	let m;
+	while (m = yearRe.exec(text)) {
+		const year = Number(m[1]);
+		const slice = text.slice(m.index, m.index + 420);
+		const pairRe = /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.?\s+(\d{1,2})\b/gi;
+		let p;
+		while (p = pairRe.exec(slice)) {
+			const month = EN_MONTH[p[1].toLowerCase()];
+			const day = Number(p[2]);
+			if (!month || !day) continue;
+			const iso = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+			if (seen.has(iso)) continue;
+			seen.add(iso);
+			out.push(iso);
+		}
+	}
+	return out.length ? out : [...WASDE_CALENDAR_2026];
+}
+function parseEsmisListing(html) {
+	const out = [];
+	const seen = /* @__PURE__ */ new Set();
+	const re = /datetime="(\d{4}-\d{2}-\d{2})T[^"]*"[\s\S]{0,600}?href="([^"]*wasde(\d{4})(v\d+)?\.txt)"/gi;
+	let m;
+	while (m = re.exec(html)) {
+		const href = m[2];
+		if (seen.has(href)) continue;
+		seen.add(href);
+		const file = `wasde${m[3]}${m[4] ?? ""}`;
+		const code = `wasde${m[3]}`;
+		const pdfHref = href.replace(/\.txt$/i, ".pdf");
+		out.push({
+			isoDate: m[1],
+			code,
+			file,
+			txtUrl: absUrl(href),
+			pdfUrl: absUrl(pdfHref)
+		});
+	}
+	return out;
+}
+function parseOceWasdeCodes(html) {
+	const seen = /* @__PURE__ */ new Set();
+	const out = [];
+	const re = /wasde(\d{4})(?:v\d+)?\.(?:pdf|txt|xml)/gi;
+	let m;
+	while (m = re.exec(html)) {
+		const code = `wasde${m[1]}`;
+		if (seen.has(code)) continue;
+		seen.add(code);
+		out.push(code);
+	}
+	return out;
+}
+function latestReleasedDate(dates, now = Date.now()) {
+	const today = nyDate(now);
+	const hour = nyHour(now);
+	return dates.filter((d) => d < today || d === today && hour >= 12).sort().at(-1) ?? null;
+}
+function pickLatestWasde(releases, calendarDates, oceCodes, now = Date.now()) {
+	if (releases.length) {
+		const r = releases[0];
+		return {
+			code: r.code,
+			isoDate: r.isoDate,
+			txtUrl: r.txtUrl,
+			pdfUrl: ocePdf(r.code)
+		};
+	}
+	if (oceCodes.length) {
+		const code = oceCodes[0];
+		return {
+			code,
+			isoDate: null,
+			txtUrl: oceTxt(code),
+			pdfUrl: ocePdf(code)
+		};
+	}
+	const iso = latestReleasedDate(calendarDates, now);
+	if (!iso) return null;
+	const code = wasdeCodeFromIso(iso);
+	return {
+		code,
+		isoDate: iso,
+		txtUrl: oceTxt(code),
+		pdfUrl: ocePdf(code)
+	};
+}
+function decimals(line) {
+	return [...line.matchAll(/\d+\.\d+/g)].map((x) => Number(x[0]));
+}
+function pairAfterLabel(block, label) {
+	const re = new RegExp(`${label}[^\\n]*\\n\\s*(${MON3})\\s+([^\\n]+)\\n\\s*(${MON3})\\s+([^\\n]+)`, "i");
+	const m = block.match(re);
+	if (!m) return null;
+	const prev = decimals(m[2]);
+	const cur = decimals(m[4]);
+	if (cur.length < 2) return null;
+	return {
+		prev,
+		cur
+	};
+}
+function tableAfter(txt, title) {
+	const i = txt.lastIndexOf(title);
+	if (i < 0) return "";
+	const rest = txt.slice(i);
+	const firstNl = rest.indexOf("\n");
+	const next = rest.indexOf("Supply and Use", Math.max(firstNl, 40));
+	const chunk = next > 0 ? rest.slice(0, next) : rest.slice(0, 8e3);
+	const proj = chunk.lastIndexOf("Proj.");
+	return proj >= 0 ? chunk.slice(proj) : chunk;
+}
+function lastYield(section) {
+	const line = section.match(/Yield per Harvested Acre[^\n]*/i);
+	if (!line) return null;
+	return decimals(line[0]).at(-1) ?? null;
+}
+function millEs(n, digits = 1) {
+	return new Intl.NumberFormat("es-AR", {
+		minimumFractionDigits: digits,
+		maximumFractionDigits: digits
+	}).format(n);
+}
+function deltaMill(cur, prev) {
+	const d = cur - prev;
+	if (!Number.isFinite(d) || Math.abs(d) < .005) return "sin cambios vs el informe previo";
+	return `${d > 0 ? "+" : "−"}${millEs(Math.abs(d), 2)} mill. t vs el informe previo`;
+}
+function ratio(cur, prev) {
+	if (!Number.isFinite(cur) || !Number.isFinite(prev) || prev === 0) return null;
+	return (cur - prev) / prev;
+}
+function worldRow(pair) {
+	if (!pair) return null;
+	const prod = pair.cur[1] ?? null;
+	const stocks = pair.cur[6] ?? pair.cur[4] ?? null;
+	const exports = pair.cur[5] ?? pair.cur[2] ?? null;
+	const prevStocks = pair.prev[6] ?? pair.prev[4] ?? null;
+	return {
+		production: prod,
+		stocks,
+		exports,
+		prevProduction: pair.prev[1] ?? null,
+		prevStocks
+	};
+}
+function usRow(pair) {
+	if (!pair) return null;
+	return {
+		production: pair.cur[1] ?? null,
+		stocks: pair.cur[6] ?? pair.cur[4] ?? null
+	};
+}
+function argRow(pair) {
+	if (!pair) return null;
+	return {
+		production: pair.cur[1] ?? null,
+		stocks: pair.cur[6] ?? pair.cur[4] ?? null
+	};
+}
+function parseWasdeTxt(txt, meta = {}) {
+	const head = txt.match(/WASDE\s*-\s*(\d+)[^\n]*?([A-Za-z]+)\s+(\d{4})/);
+	if (!head) throw new Error("sin encabezado WASDE");
+	const issue = Number(head[1]);
+	const monthEn = head[2];
+	const year = Number(head[3]);
+	const monthNum = EN_MONTH[monthEn.toLowerCase()];
+	if (!monthNum || !issue) throw new Error("encabezado WASDE incompleto");
+	const monthEs = ES_MONTH[monthNum];
+	const code = `wasde${String(monthNum).padStart(2, "0")}${String(year).slice(-2)}`;
+	const my = txt.match(/(\d{4}\/\d{2})\s+\(?Proj/)?.[1] ?? `${year}/${String(year + 1).slice(-2)}`;
+	const wheatBlk = tableAfter(txt, "World Wheat Supply and Use");
+	const cornBlk = tableAfter(txt, "World Corn Supply and Use");
+	const soyBlk = tableAfter(txt, "World Soybean Supply and Use");
+	const wheatW = worldRow(pairAfterLabel(wheatBlk, String.raw`World\s+\d+/`));
+	const cornW = worldRow(pairAfterLabel(cornBlk, String.raw`World\s+\d+/`));
+	const soyW = worldRow(pairAfterLabel(soyBlk, String.raw`World\s+\d+/`));
+	const wheatUs = usRow(pairAfterLabel(wheatBlk, "United States"));
+	const cornUs = usRow(pairAfterLabel(cornBlk, "United States"));
+	const soyUs = usRow(pairAfterLabel(soyBlk, "United States"));
+	const wheatAr = argRow(pairAfterLabel(wheatBlk, "Argentina"));
+	const cornAr = argRow(pairAfterLabel(cornBlk, "Argentina"));
+	const soyAr = argRow(pairAfterLabel(soyBlk, "Argentina"));
+	if (!soyW?.production || !cornW?.production || !wheatW?.production) throw new Error("faltan balances mundiales");
+	const wheatStart = txt.indexOf("U.S. Wheat Supply and Use");
+	const wheatEnd = txt.indexOf("U.S. Wheat by Class");
+	const wheatSec = wheatStart >= 0 ? txt.slice(wheatStart, wheatEnd > wheatStart ? wheatEnd : wheatStart + 2500) : "";
+	const feedStart = txt.indexOf("U.S. Feed Grain and Corn Supply and Use");
+	const feedEnd = txt.indexOf("U.S. Sorghum");
+	const feedSec = feedStart >= 0 ? txt.slice(feedStart, feedEnd > feedStart ? feedEnd : feedStart + 4e3) : "";
+	const cornSec = feedSec.includes("\nCORN") ? feedSec.slice(feedSec.indexOf("\nCORN")) : feedSec;
+	const soyStart = txt.indexOf("U.S. Soybeans and Products Supply and Use");
+	const soyEnd = txt.indexOf("U.S. Sugar Supply and Use");
+	const soyYield = lastYield(soyStart >= 0 ? txt.slice(soyStart, soyEnd > soyStart ? soyEnd : soyStart + 2500) : "");
+	const cornYield = lastYield(cornSec);
+	const wheatYield = lastYield(wheatSec);
+	const isoDate = meta.isoDate ?? null;
+	const published = isoDate ? `${Number(isoDate.slice(8, 10))} de ${ES_MONTH[Number(isoDate.slice(5, 7))]} de ${isoDate.slice(0, 4)}` : `${monthEs} ${year}`;
+	const period = `${my} vs informe previo`;
+	const sourceUrl = meta.sourceUrl ?? ocePdf(code);
+	const soyUsTxt = soyUs?.production != null ? ` EE.UU. ${millEs(soyUs.production)} mill. t.` : "";
+	const cornUsTxt = cornUs?.production != null ? ` EE.UU. ${millEs(cornUs.production)} mill. t.` : "";
+	const wheatUsTxt = wheatUs?.production != null ? ` EE.UU. ${millEs(wheatUs.production)} mill. t.` : "";
+	const soyArTxt = soyAr?.production != null ? ` Argentina ${millEs(soyAr.production)} mill. t.` : "";
+	const cornArTxt = cornAr?.production != null ? ` Argentina ${millEs(cornAr.production)} mill. t.` : "";
+	const wheatArTxt = wheatAr?.production != null ? ` Argentina ${millEs(wheatAr.production)} mill. t.` : "";
+	const balances = [
+		{
+			grain: "Soja",
+			usProduction: soyUs?.production ?? null,
+			usYield: soyYield,
+			usStocks: soyUs?.stocks ?? null,
+			worldProduction: soyW.production,
+			worldStocks: soyW.stocks,
+			stocksDelta: soyW.stocks != null && soyW.prevStocks != null ? ratio(soyW.stocks, soyW.prevStocks) : null,
+			unit: "mill. t"
+		},
+		{
+			grain: "Maíz",
+			usProduction: cornUs?.production ?? null,
+			usYield: cornYield,
+			usStocks: cornUs?.stocks ?? null,
+			worldProduction: cornW.production,
+			worldStocks: cornW.stocks,
+			stocksDelta: cornW.stocks != null && cornW.prevStocks != null ? ratio(cornW.stocks, cornW.prevStocks) : null,
+			unit: "mill. t"
+		},
+		{
+			grain: "Trigo",
+			usProduction: wheatUs?.production ?? null,
+			usYield: wheatYield,
+			usStocks: wheatUs?.stocks ?? null,
+			worldProduction: wheatW.production,
+			worldStocks: wheatW.stocks,
+			stocksDelta: wheatW.stocks != null && wheatW.prevStocks != null ? ratio(wheatW.stocks, wheatW.prevStocks) : null,
+			unit: "mill. t"
+		}
+	];
+	const wasde = {
+		kind: "wasde",
+		title: "WASDE · Oferta y demanda mundial",
+		published,
+		period,
+		headline: `WASDE ${monthEs} ${year} · n.° ${issue}. Soja mundial en ${millEs(soyW.production)} mill. t y stocks de cierre en ${millEs(soyW.stocks ?? 0)} mill. t. Maíz mundial ${millEs(cornW.production)} mill. t. Trigo mundial ${millEs(wheatW.production)} mill. t.`,
+		bullets: [
+			`Soja mundial: producción ${millEs(soyW.production)} mill. t, stocks de cierre ${millEs(soyW.stocks ?? 0)} mill. t (${soyW.stocks != null && soyW.prevStocks != null ? deltaMill(soyW.stocks, soyW.prevStocks) : "vs el informe previo"}).${soyUsTxt}${soyArTxt}`,
+			`Maíz mundial: producción ${millEs(cornW.production)} mill. t, stocks ${millEs(cornW.stocks ?? 0)} mill. t (${cornW.stocks != null && cornW.prevStocks != null ? deltaMill(cornW.stocks, cornW.prevStocks) : "vs el informe previo"}).${cornUsTxt}${cornArTxt}`,
+			`Trigo mundial: producción ${millEs(wheatW.production)} mill. t, stocks ${millEs(wheatW.stocks ?? 0)} mill. t (${wheatW.stocks != null && wheatW.prevStocks != null ? deltaMill(wheatW.stocks, wheatW.prevStocks) : "vs el informe previo"}).${wheatUsTxt}${wheatArTxt}`,
+			"Lectura local: el FAS teórico MAGYP y la pizarra Rosario se leen contra este número de stocks — no contra el futuro de Chicago solo."
+		],
+		balances,
+		sourceUrl,
+		pending: false
+	};
+	const soyExp = soyW.exports != null ? millEs(soyW.exports) : "—";
+	const cornExp = cornW.exports != null ? millEs(cornW.exports) : "—";
+	const wheatExp = wheatW.exports != null ? millEs(wheatW.exports) : "—";
+	return {
+		issue,
+		code,
+		isoDate,
+		wasde,
+		exports: {
+			kind: "exports",
+			title: "Exportable WASDE",
+			published,
+			period,
+			headline: `Saldo exportable del WASDE ${monthEs} ${year}. Datos extraídos de USDA · delay.`,
+			bullets: [
+				`Soja: exportaciones mundiales ${soyExp} mill. t.${soyUsTxt}`,
+				`Maíz: exportaciones mundiales ${cornExp} mill. t.${cornUsTxt}`,
+				`Trigo: exportaciones mundiales ${wheatExp} mill. t.${wheatUsTxt}`
+			],
+			balances,
+			sourceUrl,
+			pending: false
+		}
+	};
+}
+async function fetchWasdeTxt(urls) {
+	let last;
+	for (const url of urls) try {
+		const txt = await fetchText(url, 15e3);
+		if (/WASDE\s*-\s*\d+/i.test(txt)) return txt;
+		last = /* @__PURE__ */ new Error("respuesta sin WASDE");
+	} catch (e) {
+		last = e;
+	}
+	throw last instanceof Error ? last : /* @__PURE__ */ new Error("sin TXT WASDE");
+}
+async function loadWasde(now = Date.now()) {
+	if (cache$1 && now - cache$1.at < cache$1.ttl) return cache$1.value;
+	const ttlFor = (dates) => isWasdeReleaseDay(dates, now) ? RELEASE_TTL_MS : CACHE_TTL_MS;
+	try {
+		const [listing, cal] = await Promise.allSettled([fetchText(ESMIS_LISTING, 1e4), fetchText(CALENDAR_URL, 1e4)]);
+		const releases = listing.status === "fulfilled" ? parseEsmisListing(listing.value) : [];
+		const calendarDates = cal.status === "fulfilled" ? parseWasdeCalendar(cal.value) : [...WASDE_CALENDAR_2026];
+		const pick = pickLatestWasde(releases, calendarDates, cal.status === "fulfilled" ? parseOceWasdeCodes(cal.value) : [], now);
+		if (!pick) throw new Error("sin fecha de informe");
+		const live = parseWasdeTxt(await fetchWasdeTxt([oceTxt(pick.code), pick.txtUrl].filter((u, i, a) => a.indexOf(u) === i)), {
+			sourceUrl: pick.pdfUrl,
+			isoDate: pick.isoDate
+		});
+		cache$1 = {
+			at: now,
+			ttl: ttlFor(calendarDates),
+			value: live
+		};
+		return live;
+	} catch {
+		cache$1 = {
+			at: now,
+			ttl: RELEASE_TTL_MS,
+			value: null
+		};
+		return null;
+	}
+}
 function row(id, label, uses, mode, ms, host, extra = {}) {
 	return {
 		id,
@@ -852,7 +1272,21 @@ async function checkAfa() {
 		});
 	}
 }
-var ARCHIVO = [row("magyp", "MAGYP FOB/FAS", "FOB Up River, FAS teórico, campaña", "archivo", 0, "archivo local", { note: "No hay endpoint vivo; se lee del último corte guardado." }), row("usda", "USDA WASDE", "Balances mundiales y Crop Progress", "archivo", 0, "archivo local", { note: "Informe mensual, no cotización. Se actualiza a mano con el WASDE." })];
+async function checkWasde() {
+	const uses = "Balances mundiales WASDE";
+	const t0 = Date.now();
+	try {
+		const live = await loadWasde();
+		if (!live) throw new Error("sin informe");
+		return row("usda", "USDA WASDE", uses, "vivo", Date.now() - t0, "usda.gov", { note: `${live.wasde.published} · n.° ${live.issue}` });
+	} catch (e) {
+		return row("usda", "USDA WASDE", uses, "respaldo", Date.now() - t0, "usda.gov", {
+			error: errMsg(e),
+			note: "WASDE vivo no respondió · Granos usa el último corte."
+		});
+	}
+}
+var ARCHIVO = [row("magyp", "MAGYP FOB/FAS", "FOB Up River, FAS teórico, campaña", "archivo", 0, "archivo local", { note: "No hay endpoint vivo; se lee del último corte guardado." })];
 var cache = null;
 var TTL_MS = 15e3;
 async function checkFuentes(force = false) {
@@ -867,7 +1301,8 @@ async function checkFuentes(force = false) {
 		checkCoin(),
 		checkDataroma(),
 		checkCac(),
-		checkAfa()
+		checkAfa(),
+		checkWasde()
 	]);
 	const items = [...live, ...ARCHIVO];
 	const report = {
@@ -1252,48 +1687,48 @@ var granos_fallback_default = {
 		"wasde": {
 			"kind": "wasde",
 			"title": "WASDE · Oferta y demanda mundial",
-			"published": "agosto 2026",
+			"published": "11 de septiembre de 2026",
 			"period": "2026/27 vs informe previo",
-			"headline": "WASDE agosto 2026 · n.° 674. Soja mundial en 442,3 mill. t y stocks de cierre en 124,2 mill. t. Maíz mundial 1.298,9 mill. t. Trigo mundial 819,3 mill. t.",
+			"headline": "WASDE septiembre 2026 · n.° 675. Soja mundial en 442,4 mill. t y stocks de cierre en 124,0 mill. t. Maíz mundial 1.291,0 mill. t. Trigo mundial 822,4 mill. t.",
 			"bullets": [
-				"Soja mundial: producción 442,3 mill. t, stocks de cierre 124,2 mill. t (+0,04 mill. t vs el informe previo). EE.UU. 123,0 mill. t. Argentina 50,0 mill. t.",
-				"Maíz mundial: producción 1.298,9 mill. t, stocks 274,7 mill. t (−0,60 mill. t vs el informe previo). EE.UU. 406,8 mill. t. Argentina 55,0 mill. t.",
-				"Trigo mundial: producción 819,3 mill. t, stocks 273,3 mill. t (+0,41 mill. t vs el informe previo). EE.UU. 41,7 mill. t.",
+				"Soja mundial: producción 442,4 mill. t, stocks de cierre 124,0 mill. t (−0,19 mill. t vs el informe previo). EE.UU. 123,4 mill. t. Argentina 50,0 mill. t.",
+				"Maíz mundial: producción 1.291,0 mill. t, stocks 272,1 mill. t (−2,56 mill. t vs el informe previo). EE.UU. 401,3 mill. t. Argentina 55,0 mill. t.",
+				"Trigo mundial: producción 822,4 mill. t, stocks 276,3 mill. t (+3,04 mill. t vs el informe previo). EE.UU. 41,7 mill. t. Argentina 21,5 mill. t.",
 				"Lectura local: el FAS teórico MAGYP y la pizarra Rosario se leen contra este número de stocks — no contra el futuro de Chicago solo."
 			],
 			"balances": [
 				{
 					"grain": "Soja",
-					"usProduction": 122.99,
-					"usYield": 52.7,
-					"usStocks": 8.71,
-					"worldProduction": 442.25,
-					"worldStocks": 124.21,
-					"stocksDelta": .00032213900297972664,
+					"usProduction": 123.42,
+					"usYield": 52.8,
+					"usStocks": 8.43,
+					"worldProduction": 442.35,
+					"worldStocks": 124.02,
+					"stocksDelta": -.0015296674985910775,
 					"unit": "mill. t"
 				},
 				{
 					"grain": "Maíz",
-					"usProduction": 406.75,
-					"usYield": 47.8,
-					"usStocks": 41.98,
-					"worldProduction": 1298.88,
-					"worldStocks": 274.66,
-					"stocksDelta": -.002179757320351583,
+					"usProduction": 401.33,
+					"usYield": 178.5,
+					"usStocks": 39.79,
+					"worldProduction": 1290.95,
+					"worldStocks": 272.1,
+					"stocksDelta": -.009320614578023747,
 					"unit": "mill. t"
 				},
 				{
 					"grain": "Trigo",
 					"usProduction": 41.66,
-					"usYield": null,
+					"usYield": 47.8,
 					"usStocks": 19.51,
-					"worldProduction": 819.3,
-					"worldStocks": 273.25,
-					"stocksDelta": .0015027122122857062,
+					"worldProduction": 822.43,
+					"worldStocks": 276.29,
+					"stocksDelta": .011125343092406296,
 					"unit": "mill. t"
 				}
 			],
-			"sourceUrl": "https://esmis.nal.usda.gov/publication/world-agricultural-supply-and-demand-estimates",
+			"sourceUrl": "https://www.usda.gov/oce/commodity/wasde/wasde0926.pdf",
 			"pending": false
 		},
 		"progress": {
@@ -1314,47 +1749,47 @@ var granos_fallback_default = {
 		"exports": {
 			"kind": "exports",
 			"title": "Exportable WASDE",
-			"published": "agosto 2026",
+			"published": "11 de septiembre de 2026",
 			"period": "2026/27 vs informe previo",
-			"headline": "Saldo exportable del WASDE agosto 2026. Datos extraídos de USDA · delay.",
+			"headline": "Saldo exportable del WASDE septiembre 2026. Datos extraídos de USDA · delay.",
 			"bullets": [
-				"Soja: exportaciones mundiales 190,4 mill. t. EE.UU. produce 123,0 mill. t.",
-				"Maíz: exportaciones mundiales 210,5 mill. t. EE.UU. produce 406,8 mill. t.",
-				"Trigo: exportaciones mundiales — mill. t. EE.UU. produce 41,7 mill. t."
+				"Soja: exportaciones mundiales 191,6 mill. t. EE.UU. 123,4 mill. t.",
+				"Maíz: exportaciones mundiales 210,1 mill. t. EE.UU. 401,3 mill. t.",
+				"Trigo: exportaciones mundiales 211,8 mill. t. EE.UU. 41,7 mill. t."
 			],
 			"balances": [
 				{
 					"grain": "Soja",
-					"usProduction": 122.99,
-					"usYield": 52.7,
-					"usStocks": 8.71,
-					"worldProduction": 442.25,
-					"worldStocks": 124.21,
-					"stocksDelta": .00032213900297972664,
+					"usProduction": 123.42,
+					"usYield": 52.8,
+					"usStocks": 8.43,
+					"worldProduction": 442.35,
+					"worldStocks": 124.02,
+					"stocksDelta": -.0015296674985910775,
 					"unit": "mill. t"
 				},
 				{
 					"grain": "Maíz",
-					"usProduction": 406.75,
-					"usYield": 47.8,
-					"usStocks": 41.98,
-					"worldProduction": 1298.88,
-					"worldStocks": 274.66,
-					"stocksDelta": -.002179757320351583,
+					"usProduction": 401.33,
+					"usYield": 178.5,
+					"usStocks": 39.79,
+					"worldProduction": 1290.95,
+					"worldStocks": 272.1,
+					"stocksDelta": -.009320614578023747,
 					"unit": "mill. t"
 				},
 				{
 					"grain": "Trigo",
 					"usProduction": 41.66,
-					"usYield": null,
+					"usYield": 47.8,
 					"usStocks": 19.51,
-					"worldProduction": 819.3,
-					"worldStocks": 273.25,
-					"stocksDelta": .0015027122122857062,
+					"worldProduction": 822.43,
+					"worldStocks": 276.29,
+					"stocksDelta": .011125343092406296,
 					"unit": "mill. t"
 				}
 			],
-			"sourceUrl": "https://apps.fas.usda.gov/export-sales/esrd1.html",
+			"sourceUrl": "https://www.usda.gov/oce/commodity/wasde/wasde0926.pdf",
 			"pending": false
 		}
 	}
@@ -1457,7 +1892,7 @@ async function buildGranos() {
 		...s,
 		ok: s.ok
 	}));
-	const [yh, dolar, bnaPage, cacPage, afaPage] = await Promise.allSettled([
+	const [yh, dolar, bnaPage, cacPage, afaPage, wasde] = await Promise.allSettled([
 		yahooMany([
 			"ZS=F",
 			"ZC=F",
@@ -1466,7 +1901,8 @@ async function buildGranos() {
 		fetchJson("https://dolarapi.com/v1/dolares", 6e3),
 		fetchText("https://www.bna.com.ar/Personas", 8e3),
 		fetchText("https://www.cac.bcr.com.ar/es", 8e3),
-		fetchText("https://www.afascl.coop/afadiario/mercados-en-linea", 8e3)
+		fetchText("https://www.afascl.coop/afadiario/mercados-en-linea", 8e3),
+		loadWasde()
 	]);
 	const quotes = settled(yh);
 	const mark = (id, ok) => {
@@ -1577,6 +2013,12 @@ async function buildGranos() {
 			...row
 		};
 		else board.local.push(row);
+	}
+	const liveWasde = settled(wasde);
+	mark("wasde", !!liveWasde);
+	if (liveWasde) {
+		board.usda.wasde = liveWasde.wasde;
+		board.usda.exports = liveWasde.exports;
 	}
 	board.asOf = (/* @__PURE__ */ new Date()).toISOString();
 	board.sources = sources;

@@ -1,13 +1,13 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Settings } from "../_libs/lucide-react.mjs";
-import { r as cn } from "./site-nav-AKpnAPBZ.mjs";
-import { t as RequireAuth } from "./require-auth-BMH_D_o-.mjs";
-import { a as PageMain, i as PageHeader, r as Page$1 } from "./page-BU_NP2BG.mjs";
+import { r as cn } from "./site-nav-BQjdxVH2.mjs";
+import { t as RequireAuth } from "./require-auth-DXF52AGr.mjs";
+import { a as PageMain, i as PageHeader, r as Page$1 } from "./page-C_mfpDjx.mjs";
 import { c as usd, i as num, t as ars } from "./format-BTGgZiZN.mjs";
 import { c as Cell, l as ResponsiveContainer, s as Pie, t as PieChart, u as Tooltip } from "../_libs/recharts+[...].mjs";
-import { A as onCatalogChange, C as loadCatalog, D as loadOpenEscenario, M as patchEscenario, N as patchOpenCrop, P as pizarraQqFromLocal, S as lineUsdHa, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, c as RINDE_DEFAULT, f as calcularMargen, k as normalizeLine, l as RULES, o as GROUPS, p as doseLabel, r as DEFAULT_CATALOG, s as PRECIO_FALLBACK_QQ, t as CROPS, v as fleteCortoArsT, w as loadClientes } from "./estudio-B36A1NvD.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/margenes-9Ishv0HY.js
+import { A as onCatalogChange, C as loadCatalog, D as loadOpenEscenario, M as patchEscenario, N as patchOpenCrop, P as pizarraQqFromLocal, S as lineUsdHa, _ as ensureEstudioBridge, a as FX_BNA_FALLBACK, c as RINDE_DEFAULT, f as calcularMargen, k as normalizeLine, l as RULES, o as GROUPS, p as doseLabel, r as DEFAULT_CATALOG, s as PRECIO_FALLBACK_QQ, t as CROPS, v as fleteCortoArsT, w as loadClientes } from "./estudio-5MfS_QS9.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/margenes-2t9noqta.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var INP = "h-11 w-full rounded-md bg-paper-2 px-3 text-sm tabular hair";
