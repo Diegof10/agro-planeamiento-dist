@@ -1,5 +1,5 @@
-import { n as queuePersist } from "./require-auth-DXF52AGr.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/estudio-5MfS_QS9.js
+import { n as queuePersist } from "./require-auth-5tE1T_Cn.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/estudio-BLT9hSJC.js
 var bridge = null;
 function setCatalogBridge(next) {
 	bridge = next;

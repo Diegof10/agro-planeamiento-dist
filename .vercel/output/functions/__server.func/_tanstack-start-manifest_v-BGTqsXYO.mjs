@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DTciDnms.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BGTqsXYO.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/workspace/src/routes/__root.tsx",
@@ -22,7 +22,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/auth/$"
 		],
 		preloads: [
-			"/assets/index-B3H45Mc6.js",
+			"/assets/index-UFg4_JHJ.js",
 			"/assets/react-SIfiwpqq.js",
 			"/assets/useRouterState-vSBdgeep.js",
 			"/assets/theme-BwlJDZ9b.js",
@@ -31,7 +31,7 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-B3H45Mc6.js"
+			src: "/assets/index-UFg4_JHJ.js"
 		} }]
 	},
 	"/": {
@@ -83,7 +83,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/granos.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/granos-bYzgWu57.js",
+			"/assets/granos-AtSEvAPI.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/refresh-cw-dRA0fZSA.js",
 			"/assets/x-VioPvyDO.js",
@@ -110,7 +110,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/workspace/src/routes/login.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/login-CyMB_HOb.js",
+			"/assets/login-CCvs5VKd.js",
 			"/assets/site-nav-YQNbVRap.js",
 			"/assets/client-C85fcJ4s.js",
 			"/assets/button-BGLboMmU.js"

@@ -1,12 +1,12 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, U as require_react, f as useRouterState, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { n as SiteNav, r as cn, t as BrandMark } from "./site-nav-BQjdxVH2.mjs";
-import { t as RequireAuth } from "./require-auth-DXF52AGr.mjs";
-import { t as Button } from "./button-BSBEnbg8.mjs";
+import { n as SiteNav, r as cn, t as BrandMark } from "./site-nav-BghOkepp.mjs";
+import { t as RequireAuth } from "./require-auth-5tE1T_Cn.mjs";
+import { t as Button } from "./button-CBBO-iEi.mjs";
 import { c as usd, i as num } from "./format-BTGgZiZN.mjs";
-import { T as loadEscenarios, f as calcularMargen, i as ESTUDIO_EVENT, n as CROP_LABEL, t as CROPS, w as loadClientes, x as labelTipoPersona } from "./estudio-5MfS_QS9.mjs";
-import { a as freezeFoto, l as planFinanciero, n as dropFoto, o as loadFotos, s as loadInformeSource } from "./campaign-store-B42VcA56.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/informe-BJuCxfWE.js
+import { T as loadEscenarios, f as calcularMargen, i as ESTUDIO_EVENT, n as CROP_LABEL, t as CROPS, w as loadClientes, x as labelTipoPersona } from "./estudio-BLT9hSJC.mjs";
+import { a as freezeFoto, l as planFinanciero, n as dropFoto, o as loadFotos, s as loadInformeSource } from "./campaign-store-CSn2rbBC.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/informe-CqTMIRRT.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var ESCALA_JURIDICA_2026 = [
